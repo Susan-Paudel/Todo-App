@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".EditTodoFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edit_fragment_txt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/gray"
+                    android:ems="10"
+                    android:hint="@string/edit_title"
+                    android:inputType="textPersonName"
+                    android:padding="15dp" />
+
+                <EditText
+                    android:id="@+id/edit_fragment_txt_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:height="150dp"
+                    android:background="@color/gray"
+                    android:ems="10"
+                    android:hint="@string/edit_description"
+                    android:inputType="textMultiLine|textPersonName"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:padding="15dp"
+                    android:scrollbars="vertical" />
+
+                <EditText
+                    android:id="@+id/edit_fragment_txt_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/gray"
+                    android:ems="10"
+                    android:hint="@string/edit_date"
+                    android:inputType="textPersonName"
+                    android:padding="15dp" />
+
+                <RadioGroup
+                    android:id="@+id/edit_fragment_rg_priority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/edit_fragment_rb_low"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_low"
+                        android:text="@string/edit_low"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/edit_fragment_rb_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_medium"
+                        android:text="@string/edit_medium"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/edit_fragment_rb_high"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_high"
+                        android:text="@string/edit_high"
+                        android:textStyle="bold" />
+
+
+
+
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/edit_fragment_chk_complete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="CheckBox"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/edit_fragment_btn_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/black"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:text="@string/edit_save" />
+
+                    <Button
+                        android:id="@+id/edit_fragment_btn_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/black"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:text="@string/cancel" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

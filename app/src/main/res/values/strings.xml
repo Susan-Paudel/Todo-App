@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+    <string name="edit_low">Low</string>
+    <string name="edit_save">Save</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_high">High</string>
+    <string name="edit_medium">Medium</string>
+    <string name="edit_title">Title</string>
+    <string name="edit_description">Description</string>
+    <string name="edit_date">Date</string>
+    <string name="alert_cancel">Do you want to return to main screen?</string>
+    <string name="alert_delete">Do you want to delete this account?</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login">LOGIN</string>
+    <string name="delete">DELETE ACCOUNT</string>
+    <string name="submit">SUBMIT</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="welcome_message">Welcome! To My Todo App</string>
+    <string name="already_have_an_account">Already have an account?</string>
+</resources>
