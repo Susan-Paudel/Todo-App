@@ -50,15 +50,21 @@ public class EUser {
     public void setName(@NonNull String name) {
         this.name = name;
     }
-
+    //set password with string data type
     public void setPassword(@NonNull String password) {
         this.password = password;
     }
-
+    //@ignore annotation can be ignored
     @Ignore
     public EUser() {
     }
 
+    /**
+     * set the user data
+     * @param user_id
+     * @param name
+     * @param password
+     */
     public EUser(int user_id,@NonNull String name, String password) {
         this.user_id = user_id;
         this.name = name;
@@ -70,12 +76,19 @@ public class EUser {
         this.password= password;
     }
 
-
+    /**
+     * get user name
+     * @return name cannot be null
+     */
     @NonNull
     public String getName() {
         return name;
     }
 
+    /**
+     * get password
+     * @return password cannot be null
+     */
     @NonNull
     public String getPassword() {
         return password;

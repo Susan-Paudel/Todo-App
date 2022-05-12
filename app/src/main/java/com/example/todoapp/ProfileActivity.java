@@ -1,5 +1,5 @@
 package com.example.todoapp;
-
+//import required Library
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.List;
-
+//create a class ProfileActivity that inherit the property of AppCompatActivity
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileTest";
     private TodoViewModel todoViewModel;

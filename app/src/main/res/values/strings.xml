@@ -21,4 +21,6 @@
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="welcome_message">Welcome! To My Todo App</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="this_is_the_title_of_the_todo">This is the title of the todo.</string>
+    <string name="completed">Completed</string>
 </resources>
