@@ -113,6 +113,7 @@ public class ListTodoFragment extends Fragment {
         viewModel.getAllTodos().observe(getViewLifecycleOwner(), new Observer<List<ETodo>>() {
             @Override
             public void onChanged(List<ETodo> eTodos) {
+                //SharedPreferences store and retrieve small amounts of primitive data as key/value pairs
                 SharedPreferences preferences= getContext().getSharedPreferences("todo_pref",0);
                 int user_id  = preferences.getInt("user_id",0);
                 //display in the console

@@ -28,30 +28,42 @@ public class TodoRepository {
         allTodoList = mTodoDAO.getAllTodos();
     }
 
+    /**
+     * TodoDao is class and getmTodoDAO is method called a method signature
+     * @return mTodoDAO
+     */
     public TodoDao getmTodoDAO() {
         return mTodoDAO;
     }
 
+    /**
+     * set the TodoDAO
+     * @param mTodoDAO
+     */
     public void setmTodoDAO(TodoDao mTodoDAO) {
         this.mTodoDAO = mTodoDAO;
     }
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
     // getAllWords method returns the LiveData list of words from Room
-
     /**
      * @return allTodoList of words from TodoRoomDatabase
      */
     public LiveData<List<ETodo>> getAllTodoList() {
         return allTodoList;
     }
-
+    //set the data to allTodoList
     public void setAllTodoList(LiveData<List<ETodo>> allTodoList) {
         this.allTodoList = allTodoList;
     }
-    // You must call this on a non-UI thread or your app will throw an exception. Room ensures
-    // that you're not doing any long running operations on the main thread, blocking the UI.
+
+    /**
+     *
+     * Creates a new asynchronous task,This constructor must be invoked on the UI thread
+     * @param eTodo a reference of Class in your method signature
+     */
     public void insert(ETodo eTodo){
+        //object of asynchronous of mTodoDAO
         new insertTodoAysncTask(mTodoDAO).execute(eTodo);
     }
 
@@ -59,8 +71,13 @@ public class TodoRepository {
         new updateTodoAysncTask(mTodoDAO).execute(eTodo);
     }
 
+    /**
+     * updateIsCompleted function set the value in mTodoDAO when update is success
+     * @param id
+     * @param is_completed
+     */
     public void updateIsCompleted(int id, boolean is_completed) {mTodoDAO.updateIsComplete(id, is_completed);}
-
+    //
     public void deleteById(ETodo eTodo){
         new deleteByIdTodoAysnc(mTodoDAO).execute(eTodo);
     }

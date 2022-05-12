@@ -10,6 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,8 +23,10 @@
                 android:layout_width="204dp"
                 android:layout_height="150dp"
                 android:foreground="@drawable/ic_account"
+                android:foregroundTint="@color/black"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="50dp"
+                />
             <TextView
                 android:id="@+id/profile_activity_tv_name"
                 android:layout_width="131dp"
@@ -105,14 +110,7 @@
                 android:layout_marginTop="50dp"
                 />
         </LinearLayout>
-
-
-
-
-
-
-
-
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
