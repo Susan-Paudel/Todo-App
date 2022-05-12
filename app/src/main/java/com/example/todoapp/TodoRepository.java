@@ -18,13 +18,13 @@ public class TodoRepository {
     private LiveData<List<ETodo>> allTodoList;
 
     /**
-     * Unit test the TodoRepository, you have to remove the Application
-     * dependency. This adds complexity and much more code, and this sample is not about testing.
+     * Save data in a local database using Room
      * @param application
      */
     public TodoRepository(Application application){
         TodoRoomDatabase database = TodoRoomDatabase.getDatabase(application);
         mTodoDAO = database.mTodoDao();
+        //initializing the mTodoDao into allTodoList
         allTodoList = mTodoDAO.getAllTodos();
     }
 

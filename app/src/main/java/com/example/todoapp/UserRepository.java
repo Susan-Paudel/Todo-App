@@ -1,12 +1,13 @@
 package com.example.todoapp;
-
+//import required Library
 import android.app.Application;
 import android.os.AsyncTask;
 
 import java.util.List;
 
-
+//UserRepository class has been created
 public class UserRepository {
+    //Declaring UserDao interface
     private UserDao mUserDao;
 
     public UserRepository(Application app) {

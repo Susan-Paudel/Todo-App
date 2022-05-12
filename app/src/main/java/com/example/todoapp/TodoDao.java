@@ -33,7 +33,8 @@ public interface TodoDao {
     //delete by id from ETodo object
     @Delete
     void deleteById(ETodo todo);
-
+    //query that select all data from todo table where id is equal to passed id
+    //get data related to id
     @Query("SELECT * FROM todo_table WHERE id=:id")
     ETodo getTodoById(int id);
 

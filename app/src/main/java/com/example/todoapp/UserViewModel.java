@@ -1,14 +1,20 @@
 package com.example.todoapp;
-
+//import required Library
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import java.util.List;
-
+//create class UserViewModel that extends AndroidViewModel
 public class UserViewModel extends AndroidViewModel {
+    //Declare a variable for UserRepository class
     UserRepository repository;
+
+    /**
+     * UserViewModel is created
+     * @param application
+     */
     public UserViewModel(@NonNull Application application) {
         super(application);
         repository = new UserRepository(application);
