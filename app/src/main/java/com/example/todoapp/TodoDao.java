@@ -1,4 +1,4 @@
-package com.example.todoapp;
+package com.example.todoapp.data;
 //import required Library
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
