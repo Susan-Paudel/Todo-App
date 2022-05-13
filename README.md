@@ -66,21 +66,21 @@ personal account and update password.**
 # List
 view the list of data<br/>
 ![listofdata](RecordAndScreenshot/listofdata.gif)
+**This page shows the all the todo task **
 
-
-#Delete Completed
-Open the menu options and select delete completed to delete completed tasks only.<br />
+#Delete task selected Completed tasks only
+**Open the menu options and select delete completed to delete completed tasks only.**<br/>
 ![deleteCompletedTask](RecordAndScreenshot/deleteCompleted.gif)
 
 # Delete All
-Open the menu options and select delete all to delete every tasks.<br />
+**Open the menu options and select delete all to delete every tasks.**<br/>
 ![deleteAll](RecordAndScreenshot/deleteAll.gif)
 
 # Logout
-To logout from the app, you can click the power off button on the menu bar.<br />
+**To logout from the app, you can click the power off button on the menu bar.**<br/>
 ![logout](RecordAndScreenshot/logout.gif)
 
 # Landscape 
-Run whole application in landscape <br/>
+**Run whole application in landscape.**<br/>
 !['landscape](RecordAndScreenshot/landscape.gif)
 
