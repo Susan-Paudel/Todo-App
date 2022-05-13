@@ -28,13 +28,13 @@ Icon that is used for app is the one inside the circle.<br />
 
 # Registration
 We need to register in order to login.<br />
-Register detail needs to be different.<br />
 ![signup](RecordAndScreenshot/signup.gif)
-
+Register detail name must be different validation and empty validation<br />
+![signupValidation](RecordAndScreenshot/validationSignup.gif)
 
 # Login
-Validation is done for login. <br />
-
+Validation is done for login. After login successful<br />
+![login](RecordAndScreenshot/login.gif)
 
 # Add
 
