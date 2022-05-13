@@ -29,7 +29,7 @@ Icon that is used for app is the one inside the circle.<br />
 # Registration
 We need to register in order to login.<br />
 Register detail needs to be different.<br />
-[!signup]("RecordAndScreenshot/signup.gif")
+![signup](RecordAndScreenshot/signup.gif)
 
 
 # Login
