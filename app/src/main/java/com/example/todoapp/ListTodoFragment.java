@@ -99,6 +99,8 @@ public class ListTodoFragment extends Fragment {
                         ETodo todo = adaptor.getTodoAt(viewHolder.getAdapterPosition());
                         //delete the view by it id
                         viewModel.deleteById(todo);
+                        //toasts message that shows task deleted
+                        Toast.makeText(getActivity(),"One todos deleted!", Toast.LENGTH_LONG).show();
                     }
                 }).attachToRecyclerView(rvListTodo);
 

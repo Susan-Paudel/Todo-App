@@ -47,20 +47,30 @@ double tab the given items for update<br/>
 
 # Delete
 You can delete task by swiping left and right the task.<br />
+![Delete](RecordAndScreenshot/Delete.gif)
 
+#user profile
+user profile we can delete the user and update password<br/>
+![profile](RecordAndScreenshot/userprofile.gif)
 
 # List
+view the list of data<br/>
+![listofdata](RecordAndScreenshot/listofdata.gif)
 
+
+#Delete Completed
+Open the menu options and select delete completed to delete completed tasks only.<br />
+![deleteCompletedTask](RecordAndScreenshot/deleteCompleted.gif)
 
 # Delete All
 Open the menu options and select delete all to delete every tasks.<br />
-
+![deleteAll](RecordAndScreenshot/deleteAll.gif)
 
 # Logout
 To logout from the app, you can click the power off button on the menu bar.<br />
+![logout](RecordAndScreenshot/logout.gif)
 
+# Landscape 
+Run whole application in landscape <br/>
+!['landscape](RecordAndScreenshot/landscape.gif)
 
-# Landscape Add
-
-
-# Landscape List
