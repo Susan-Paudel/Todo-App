@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -22,6 +23,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+
 //MainActivity as child class that extends AppCompatActivity parent class
 public class MainActivity extends AppCompatActivity {
     //Initialized the string value in TAG
@@ -39,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Initializes the activity.
-     *  @param savedInstanceState The current state data.
+     *
+     * @param savedInstanceState The current state data.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         //SharedPreferences store and retrieve small amounts of primitive data as key/value pairs
         preferences = getApplicationContext().getSharedPreferences("todo_pref", 0);
-        int user_id = preferences.getInt("user_id",0);
+        int user_id = preferences.getInt("user_id", 0);
         //access the userViewModel from EUser class
         EUser eUser = userViewModel.getUserById(user_id);
         //get toolbar using id
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * onCreateOptionsMenu has been created to set the main_menu
+     *
      * @param menu
      * @return true
      */
@@ -127,43 +131,44 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * creating onOptionItemSelected method is used to deleted all the user and todolist
+     *
      * @param item
      * @return onOptionsItemSelected(item)
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //initialized the user_id from preferences where id is negative one
-        int user_id = preferences.getInt("user_id",-1);
+        int user_id = preferences.getInt("user_id", -1);
         //switch condition get id from item
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             //in dropdown menu delete all button is clicked
             case R.id.mnu_delete_all:
                 //delete all the user from todoViewModel
                 todoViewModel.deleteAll(user_id);
                 //toast message
-                Toast.makeText(getApplicationContext(),"All todos deleted!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "All todos deleted!", Toast.LENGTH_LONG).show();
                 break;
             //in dropdown menu delete completed button is clicked
             case R.id.mnu_delete_completed:
-                 //if user_id is not equal to negative one
-                if(user_id != -1) {
+                //if user_id is not equal to negative one
+                if (user_id != -1) {
                     //user_id deleted
                     todoViewModel.deleteAllCompleted(user_id, true);
                 }
                 //else failed message will display
                 else {
-                    Toast.makeText(getApplicationContext(),"Failed to delete!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Failed to delete!", Toast.LENGTH_LONG).show();
                 }
 
                 break;
-                //when logout is clicked then this case will run
+            //when logout is clicked then this case will run
             case R.id.mnu_logout:
                 //clear all the SharedPreferences
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
                 editor.commit();
                 //redirect to loginActivity page by the help of intent object
-                Intent intent= new Intent(this, LoginActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
                 //start activity
                 startActivity(intent);
                 //finish
@@ -171,4 +176,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }}
+    }
+}

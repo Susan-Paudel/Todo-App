@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import the required Library
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+
 //Creating ListTodoFragment class that extends Fragment
 public class ListTodoFragment extends Fragment {
     //Declare the required view components
@@ -31,6 +33,7 @@ public class ListTodoFragment extends Fragment {
     LinearLayoutManager manager;
     //initializing into TAG
     private static final String TAG = "TodoTest";
+
     /**
      * Initializes the activity.
      *
@@ -45,6 +48,7 @@ public class ListTodoFragment extends Fragment {
      * Inflate fragment layout, selects recycle view,
      * set it's layout to linear using linear layout manager,
      * finally call the updateRV method and listen for ItemTouch using ITemTouchHelper.
+     *
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -54,7 +58,7 @@ public class ListTodoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView =  inflater.inflate(R.layout.fragment_list_todo, container, false);
+        rootView = inflater.inflate(R.layout.fragment_list_todo, container, false);
         //get view using it id
         rvListTodo = rootView.findViewById(R.id.list_todo_rv);
         //object of ViewModelProvider
@@ -70,7 +74,7 @@ public class ListTodoFragment extends Fragment {
         //object ItemTouchHelper
         new ItemTouchHelper(
                 //item that is swap to left side or right side
-                new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
+                new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
                     /**
                      * make a move in recyclerView
                      * @param recyclerView
@@ -100,31 +104,31 @@ public class ListTodoFragment extends Fragment {
                         //delete the view by it id
                         viewModel.deleteById(todo);
                         //toasts message that shows task deleted
-                        Toast.makeText(getActivity(),"One todos deleted!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "One todos deleted!", Toast.LENGTH_LONG).show();
                     }
                 }).attachToRecyclerView(rvListTodo);
 
         //return rootView
-        return  rootView;
+        return rootView;
     }
 
     /**
      * Get all the todos using getAllTodos and observe them using observer.
      */
-    void updateRV(){
+    void updateRV() {
         viewModel.getAllTodos().observe(getViewLifecycleOwner(), new Observer<List<ETodo>>() {
             @Override
             public void onChanged(List<ETodo> eTodos) {
                 //SharedPreferences store and retrieve small amounts of primitive data as key/value pairs
-                SharedPreferences preferences= getContext().getSharedPreferences("todo_pref",0);
-                int user_id  = preferences.getInt("user_id",0);
+                SharedPreferences preferences = getContext().getSharedPreferences("todo_pref", 0);
+                int user_id = preferences.getInt("user_id", 0);
                 //display in the console
                 Log.d(TAG, "user_id: " + user_id + "size of etodo" + eTodos.size());
                 //for loop get data less than eTodos size
-                for (int i = 0; i< eTodos.size(); i++) {
+                for (int i = 0; i < eTodos.size(); i++) {
                     //Log.d(TAG, "********user id of this todo is: " + eTodos.get(i).getUser_id() + " and title: " + eTodos.get(i).getTitle() + "***********");
                     //if set id is not equal to user_id
-                    if(eTodos.get(i).getUser_id() != user_id) {
+                    if (eTodos.get(i).getUser_id() != user_id) {
                         //Log.d(TAG, "user id of this todo is: " + eTodos.get(i).getUser_id() + " and title: " + eTodos.get(i).getTitle() + "user_id we are checking with : " + user_id );
                         //remove the given data
                         eTodos.remove(i);
@@ -139,6 +143,7 @@ public class ListTodoFragment extends Fragment {
             }
         });
     }
+
     //create class TodoHolder that inherit property of RecyclerView.ViewHolder
     private class TodoHolder extends RecyclerView.ViewHolder {
         //Declare the required view components
@@ -147,11 +152,10 @@ public class ListTodoFragment extends Fragment {
         TodoAdaptor adaptor;
 
         /**
-         *
          * @param inflater
          * @param parent
          */
-        public TodoHolder(LayoutInflater inflater, ViewGroup parent){
+        public TodoHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_todo, parent, false));
             //find view by id of required component
             title = itemView.findViewById(R.id.list_item_todo_tv_title);
@@ -198,27 +202,27 @@ public class ListTodoFragment extends Fragment {
         }
 
 
-
         //function loadUpdateItem
-        void loadUpdateItem(){
+        void loadUpdateItem() {
             //initializing the getAdapterPosition function in i variable
             int i = getAdapterPosition();
             ETodo todo = adaptor.getTodoAt(i);
             //creating the object of intent
             Intent intent = new Intent(getActivity(), EditActivity.class);
             //passing the value with id
-            intent.putExtra("TodoId",todo.getId());
+            intent.putExtra("TodoId", todo.getId());
             //start activity
             startActivity(intent);
             //toast message with length long
-            Toast.makeText(getContext(),"Update Item: " + todo.getId(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Update Item: " + todo.getId(), Toast.LENGTH_LONG).show();
         }
 
         /**
          * bind parameterized method
+         *
          * @param todo
          */
-        public void bind(ETodo todo){
+        public void bind(ETodo todo) {
             //formatting the date
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             //get all the data from views
@@ -229,17 +233,18 @@ public class ListTodoFragment extends Fragment {
         }
 
     }
+
     //created TodoAdapter class that inherit the property of Recyclerview
-    private class TodoAdaptor extends RecyclerView.Adapter<TodoHolder>{
+    private class TodoAdaptor extends RecyclerView.Adapter<TodoHolder> {
         //declare a list of ETodo class
         List<ETodo> eTodoList;
 
         /**
          * initialized the todoList to eTodoList
+         *
          * @param todoList
          */
-        public TodoAdaptor(List<ETodo> todoList)
-        {
+        public TodoAdaptor(List<ETodo> todoList) {
             eTodoList = todoList;
         }
 
@@ -247,6 +252,7 @@ public class ListTodoFragment extends Fragment {
          * ViewGroup is the parent view that will hold your cell that you are about to create
          * viewType is useful if you have different types of cells in your list
          * This method returns the ViewHolder for our item, using the provided View.
+         *
          * @param parent
          * @param viewType
          * @return TodoHolder function
@@ -260,6 +266,7 @@ public class ListTodoFragment extends Fragment {
 
         /**
          * onBindViewHolder function is created with parameter
+         *
          * @param holder
          * @param position
          */
@@ -268,7 +275,7 @@ public class ListTodoFragment extends Fragment {
             //getting the position of list item from ETodo class
             ETodo todo = eTodoList.get(position);
             //linear layout
-            LinearLayout layout =(LinearLayout)((ViewGroup)holder.title.getParent());
+            LinearLayout layout = (LinearLayout) ((ViewGroup) holder.title.getParent());
             //switch to set the background color of given component of app
             switch (todo.getPriority()) {
                 case 1:
@@ -286,19 +293,21 @@ public class ListTodoFragment extends Fragment {
 
         /**
          * function count the number of data from list
+         *
          * @return size of eTodoList
          */
-       @Override
+        @Override
         public int getItemCount() {
             return eTodoList.size();
         }
 
         /**
          * function return the position of list
+         *
          * @param position
          * @return etodolist position
          */
-        public ETodo getTodoAt(int position){
+        public ETodo getTodoAt(int position) {
             return eTodoList.get(position);
         }
     }

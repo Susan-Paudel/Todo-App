@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import the required Library
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.List;
+
 //create class LoginActivity that extends AppCompatActivity
 public class LoginActivity extends AppCompatActivity {
     //initialized the string value in Tag variable
@@ -22,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     Button signup, login;
     List<EUser> userList;
     private UserViewModel userViewModel;
+
     /**
      * Initializes the activity.
      *
@@ -46,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
          * will use, call getDefaultSharedPreferences(android.content.Context) with a context in the
          * same package as this activity
          */
-        SharedPreferences preference = getApplicationContext().getSharedPreferences("todo_pref",  0);
+        SharedPreferences preference = getApplicationContext().getSharedPreferences("todo_pref", 0);
         SharedPreferences.Editor editor = preference.edit();
 
         // Create an anonymous implementation of OnClickListener for login
@@ -60,35 +63,33 @@ public class LoginActivity extends AppCompatActivity {
                 //get all the data from userViewModel
                 userList = userViewModel.getAllUsers();
                 //for loop to fetch all the data exist in userList
-                for (int i = 0; i< userList.size(); i++) {
+                for (int i = 0; i < userList.size(); i++) {
                     //show details in console
                     Log.d(TAG, userList.get(i).getName());
                     //if username and password matches the database.
-                    if(userList.get(i).getName().equalsIgnoreCase(name.getText().toString())
+                    if (userList.get(i).getName().equalsIgnoreCase(name.getText().toString())
                             && userList.get(i).getPassword().equals(password.getText().toString())) {
 
-                        editor.putBoolean("authentication",true);
+                        editor.putBoolean("authentication", true);
                         editor.putInt("user_id", userList.get(i).getUser_id());
                         editor.commit();
 
                     }
                 }
                 //if authentication is set to false
-                Boolean authentication = preference.getBoolean("authentication",false);
-                 //if authentication is correct
-                if(authentication) {
+                Boolean authentication = preference.getBoolean("authentication", false);
+                //if authentication is correct
+                if (authentication) {
                     //it will redirect to MainActivity class
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     //start activity
                     startActivity(intent);
-                }
-                else {
+                } else {
                     //Send the error if the username and password does not match
                     name.setError("Username or password doesn't match!");
                     //toast message also display
-                    Toast.makeText(LoginActivity.this,"User not found!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "User not found!", Toast.LENGTH_LONG).show();
                 }
-
 
 
             }

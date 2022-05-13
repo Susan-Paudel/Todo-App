@@ -1,10 +1,12 @@
 package com.example.todoapp;
 //import required Library
+
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
 //EditActivity class inherit the property of AppCompatActivity class
 public class EditActivity extends AppCompatActivity {
     /**
@@ -15,8 +17,7 @@ public class EditActivity extends AppCompatActivity {
     Fragment fragment;
 
     /**
-     * @param savedInstanceState
-     * Activities have the ability,to restore themselves to a previous state using the data stored in this bundle
+     * @param savedInstanceState Activities have the ability,to restore themselves to a previous state using the data stored in this bundle
      * @Override annotation indicates that the EditActivity class method is over-writing its AppCompatActivity class method
      */
     @Override

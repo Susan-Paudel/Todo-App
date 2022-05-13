@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -16,6 +17,7 @@ import java.util.Date;
 
 /**
  * Defines the database configuration and serves as the app's main access point to the persisted data.
+ *
  * @Database annotation parameters to declare the entities that belong in the database and set the version number
  * TodoRoomdatabase class for Room must be abstract and extend RoomDatabase
  */
@@ -24,11 +26,13 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
     /**
      * The database class must define an abstract method that has zero arguments
      * and returns an instance of the DAO class, for each DAO class.
+     *
      * @return TodoDao
      */
     public abstract TodoDao mTodoDao();
 
     public abstract UserDao mUserDao();
+
     //creating static TodoRoomDatabase instance
     public static TodoRoomDatabase INSTANCE;
 
@@ -36,14 +40,15 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
      * getDatabase returns the singleton. It'll create the database the first time it's accessed,
      * using Room's database builder to create a RoomDatabase object in the application context from
      * the TodoRoomDatabase class and names it "todo.db"
+     *
      * @param context
      * @return Instance
      */
 
     public static TodoRoomDatabase getDatabase(Context context) {
-        if(INSTANCE == null) {
-            synchronized (TodoRoomDatabase.class){
-                if(INSTANCE ==null){
+        if (INSTANCE == null) {
+            synchronized (TodoRoomDatabase.class) {
+                if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             TodoRoomDatabase.class,
                             "todo.db")
@@ -56,6 +61,7 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
     //this method save the state in RoomDatabase
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
         @Override
@@ -65,6 +71,7 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
         }
 
     };
+
     //prepopulate a Room database from a prepackaged database file i.e. todoDao and userDao
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private TodoDao todoDao;
@@ -83,7 +90,7 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
              */
             Date todoDate = new Date();
             //try catch
-            try{
+            try {
                 //format the date in year, month ,day
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 todoDate = format.parse("2022/05/08");
@@ -100,7 +107,7 @@ public abstract class TodoRoomDatabase extends RoomDatabase {
             /**
              * Inserting data in user_table
              */
-            userDao.insert(new EUser(0,"Susan", "123"));
+            userDao.insert(new EUser(0, "Susan", "123"));
             return null;
         }
     }

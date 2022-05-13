@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import the required Library
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.List;
+
 //create class SignupActivity that extends AppCompactActivity
 public class SignupActivity extends AppCompatActivity {
     //initializing the values in Tag variable
@@ -24,9 +26,11 @@ public class SignupActivity extends AppCompatActivity {
     private UserViewModel userViewModel;
     //setting boolean error false
     Boolean error = false;
+
     /**
      * Initializes the activity.
-     *  @param savedInstanceState The current state data.
+     *
+     * @param savedInstanceState The current state data.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +68,7 @@ public class SignupActivity extends AppCompatActivity {
                 //get password from input filed and set password in to db
                 eUser.setPassword(password.getText().toString());
                 //password field validation if empty
-                if(password.getText().toString().trim().equals("") ||
+                if (password.getText().toString().trim().equals("") ||
                         confirmPassword.getText().toString().trim().equals("")) {
                     //error variable is set to true
                     error = true;
@@ -72,15 +76,15 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, "Password field shouldn't be empty!", Toast.LENGTH_SHORT).show();
                 }
                 //validation for confirm password and password match
-                if(!password.getText().toString().equals(confirmPassword.getText().toString())) {
+                if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
                     //error exist the it will set to true
                     error = true;
                     //error message showing confirm password must match
                     password.setError("Password must match confirm password!");
                 }
                 //validation for unique username
-                for (int i = 0; i< userList.size(); i++) {
-                    if(name.getText().toString().equalsIgnoreCase(userList.get(i).getName())) {
+                for (int i = 0; i < userList.size(); i++) {
+                    if (name.getText().toString().equalsIgnoreCase(userList.get(i).getName())) {
                         Log.d(TAG, userList.get(i).getName());
                         //if user exists
                         name.setError("User name already exists!");
@@ -92,16 +96,15 @@ public class SignupActivity extends AppCompatActivity {
                 }
 
                 //if error does not exists
-                if(!error) {
+                if (!error) {
                     //data inserted
                     userViewModel.insert(eUser);
                     //success message
-                    Toast.makeText(SignupActivity.this,"Registered successfully!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupActivity.this, "Registered successfully!", Toast.LENGTH_LONG).show();
                     error = false;
-                }
-                else {
+                } else {
                     //unsuccessful registration error
-                    Toast.makeText(SignupActivity.this,"Registration Failed!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupActivity.this, "Registration Failed!", Toast.LENGTH_LONG).show();
                 }
 
             }

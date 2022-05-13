@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.List;
+
 //create a class ProfileActivity that inherit the property of AppCompatActivity
 public class ProfileActivity extends AppCompatActivity {
     //initializing the values in Tag variable
@@ -25,9 +27,11 @@ public class ProfileActivity extends AppCompatActivity {
     Integer user_id;
     TextView name, old_pass, new_pass;
     Button submit, delete;
+
     /**
      * Initializes the activity.
-     *  @param savedInstanceState The current state data.
+     *
+     * @param savedInstanceState The current state data.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
         submit = findViewById(R.id.profile_activity_btn_submit);
         delete = findViewById(R.id.profile_activity_btn_delete);
         //SharedPreferences store and retrieve small amounts of primitive data as key/value pairs
-        SharedPreferences preferences=getApplicationContext().getSharedPreferences("todo_pref",0);
-        user_id = preferences.getInt("user_id",-1);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("todo_pref", 0);
+        user_id = preferences.getInt("user_id", -1);
         //access the userViewModel from EUser class
         EUser eUser = userViewModel.getUserById(user_id);
         //set the text in name by getting from eUser
@@ -61,14 +65,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //condition that check whether old_password filed is empty
-                if(old_pass.getText().toString().trim().toString().equals("") ||
+                if (old_pass.getText().toString().trim().toString().equals("") ||
                         old_pass.getText().toString().trim().toString().equals("")) {
                     //display the toast message
                     Toast.makeText(ProfileActivity.this, "Password field is empty!", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     //condition to check whether the old_password taken from input field
-                    if(old_pass.getText().toString().equals(eUser.getPassword())) {
+                    if (old_pass.getText().toString().equals(eUser.getPassword())) {
                         eUser.setPassword(new_pass.getText().toString());
                         userViewModel.update(eUser);
                         //display toast message after success
@@ -103,13 +106,13 @@ public class ProfileActivity extends AppCompatActivity {
                                 //display in console
                                 Log.d(TAG, "user_id: " + user_id + "size of etodo" + eTodo.size());
                                 //for loop to display all the data from eTodo
-                                for(int i = 0; i<eTodo.size(); i++) {
+                                for (int i = 0; i < eTodo.size(); i++) {
                                     //display in console
-                                    Log.d(TAG, "todo_id: " + eTodo.get(i).getUser_id() + " Index value: "+ i +" size of etodo" + eTodo.size() + "******");
+                                    Log.d(TAG, "todo_id: " + eTodo.get(i).getUser_id() + " Index value: " + i + " size of etodo" + eTodo.size() + "******");
                                     //if the eTodo user id is equal to present user id in db
-                                    if(eTodo.get(i).getUser_id() == user_id) {
+                                    if (eTodo.get(i).getUser_id() == user_id) {
                                         //display in console
-                                        Log.d(TAG, "todo_id: " + eTodo.get(i).getUser_id() +" size of etodo" + eTodo.size() + "******");
+                                        Log.d(TAG, "todo_id: " + eTodo.get(i).getUser_id() + " size of etodo" + eTodo.size() + "******");
                                         //delete all the data input by given user
                                         todoViewModel.deleteById(eTodo.get(i));
                                     }

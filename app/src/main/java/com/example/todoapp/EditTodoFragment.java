@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -26,8 +27,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
 //EditTodoFragment inherit the property of Fragment class
-public class EditTodoFragment extends Fragment{
+public class EditTodoFragment extends Fragment {
     //Declaring the required interface
     View rootView;
     EditText txtTitle, txtDescription, txtDate;
@@ -46,6 +48,7 @@ public class EditTodoFragment extends Fragment{
 
     /**
      * Inflate fragment layout, selects recycle view
+     *
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -54,7 +57,7 @@ public class EditTodoFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView =  inflater.inflate(R.layout.fragment_edit_todo, container, false);
+        rootView = inflater.inflate(R.layout.fragment_edit_todo, container, false);
         //getting the required views by id
         txtTitle = rootView.findViewById(R.id.edit_fragment_txt_name);
         txtDescription = rootView.findViewById(R.id.edit_fragment_txt_description);
@@ -76,7 +79,7 @@ public class EditTodoFragment extends Fragment{
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 //if event action is equal to motion event
-                if(event.getAction()==MotionEvent.ACTION_DOWN)
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
                     //display test date function
                     DisplayTestDate();
                 return false;
@@ -108,6 +111,7 @@ public class EditTodoFragment extends Fragment{
         //return rootView
         return rootView;
     }
+
     //void function DisplayTestDate does not return anything simple a function
     void DisplayTestDate() {
         //creating the object of calendar
@@ -136,8 +140,9 @@ public class EditTodoFragment extends Fragment{
         }, cYear, cMonth, cDay);
         pickerDialog.show();
     }
-//showAlertCancel function
-    void ShowAlertCancel(){
+
+    //showAlertCancel function
+    void ShowAlertCancel() {
         //alertDialog is created of AlertDialog.Builder class
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getContext());
         //some message display after some event
@@ -170,6 +175,7 @@ public class EditTodoFragment extends Fragment{
 
         alertDialog.show();
     }
+
     //function loadUpdateDate
     void loadUpdateData() {
         //declaring the variable todoId
@@ -189,9 +195,9 @@ public class EditTodoFragment extends Fragment{
             //formatting the date
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             //set the formatted date
-            txtDate.setText(format.format( todo.getTodoDate()));
+            txtDate.setText(format.format(todo.getTodoDate()));
             //switch case
-            switch (todo.getPriority()){
+            switch (todo.getPriority()) {
                 case 1:
                     //edit_fragment_rb_high component will display
                     rgPriority.check(R.id.edit_fragment_rb_high);
@@ -208,8 +214,9 @@ public class EditTodoFragment extends Fragment{
             chComplete.setChecked(todo.isCompleted());
         }
     }
+
     //function SaveTodo
-    void SaveTodo(){
+    void SaveTodo() {
         //error is set to false
         error = false;
         //creating the object of ETodo and Date
@@ -224,7 +231,7 @@ public class EditTodoFragment extends Fragment{
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             todoDate = format.parse(txtDate.getText().toString());
         }//catch block will execute if the try block does not get execute
-        catch (ParseException ex){
+        catch (ParseException ex) {
             ex.printStackTrace();
             //shows Invalid date
             txtDate.setError("Invalid date!");
@@ -232,32 +239,31 @@ public class EditTodoFragment extends Fragment{
         //set the rgPriority
         checkedPriority = rgPriority.getCheckedRadioButtonId();
         //switch statement checkedPriority exist
-        switch (checkedPriority){
+        switch (checkedPriority) {
             case R.id.edit_fragment_rb_high:
                 //set to high priority
                 priority = HIGH_PRIORITY;
                 break;
             case R.id.edit_fragment_rb_medium:
                 //set to medium priority
-                priority=MEDIUM_PRIORITY;
+                priority = MEDIUM_PRIORITY;
                 break;
             case R.id.edit_fragment_rb_low:
                 //set to low priority
-                priority=LOW_PRIORITY;
+                priority = LOW_PRIORITY;
                 break;
         }
         //SharedPreferences store and retrieve small amounts of primitive data as key/value pairs
-        SharedPreferences preferences= getContext().getSharedPreferences("todo_pref",0);
-        int user_id  = preferences.getInt("user_id",0);
+        SharedPreferences preferences = getContext().getSharedPreferences("todo_pref", 0);
+        int user_id = preferences.getInt("user_id", 0);
         //print in the console
         Log.d(TAG, "*** user_id: " + user_id + " ****");
         //if condition input type EditText is empty i.e.validation then toast is displayed
-        if(txtTitle.getText().toString().trim().equals("") || txtDescription.getText().toString().trim().equals("")
+        if (txtTitle.getText().toString().trim().equals("") || txtDescription.getText().toString().trim().equals("")
                 || txtDate.getText().toString().trim().equals("") || checkedPriority == -1) {
             Toast.makeText(getContext(), "Fill all the text fields and select priority!", Toast.LENGTH_SHORT).show();
             error = true;
-        }
-        else {
+        } else {
             //get the data from all the fields
             eTodo.setTitle(txtTitle.getText().toString());
             eTodo.setDescription(txtDescription.getText().toString());
@@ -267,11 +273,11 @@ public class EditTodoFragment extends Fragment{
             eTodo.setUser_id(user_id);
         }
         //creating the object of TodoViewModel
-        TodoViewModel viewModel  = new ViewModelProvider(this).get(TodoViewModel.class);
+        TodoViewModel viewModel = new ViewModelProvider(this).get(TodoViewModel.class);
         //if error not exist
-        if(!error) {
+        if (!error) {
             //if todoId is not equal to -1
-            if(todoId != -1){
+            if (todoId != -1) {
                 //setId to eTodo
                 eTodo.setId(todoId);
                 //viewModel is update else insert
@@ -279,15 +285,12 @@ public class EditTodoFragment extends Fragment{
             } else viewModel.insert(eTodo);
 
             //Toast message shows TodoSaved with short length
-            Toast.makeText(getActivity(), "Todo Saved",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Todo Saved", Toast.LENGTH_SHORT).show();
             //intent object is created
-            Intent intent= new Intent(getActivity(),MainActivity.class);
+            Intent intent = new Intent(getActivity(), MainActivity.class);
             //redirect to next page
             startActivity(intent);
         }
-
-
-
 
 
     }

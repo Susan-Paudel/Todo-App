@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -46,17 +47,20 @@ public class ETodo {
 
     /**
      * get the user id
+     *
      * @return user_id
      */
     public int getUser_id() {
         return user_id;
     }
+
     /**
      * set the user id
      */
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
+
     //constructor od the class and @Ignore state to ignore particular tests
     @Ignore
     public ETodo() {
@@ -64,6 +68,7 @@ public class ETodo {
 
     /**
      * parameterized method which cannot be null
+     *
      * @param title
      * @param description
      * @param todoDate
@@ -79,19 +84,23 @@ public class ETodo {
         this.isCompleted = isCompleted;
         this.user_id = user_id;
     }
+
     //get the id
     public int getId() {
         return id;
     }
+
     //set the id
     public void setId(int id) {
         this.id = id;
     }
+
     //get title
     @NonNull
     public String getTitle() {
         return title;
     }
+
     //set the Title ans cannot be null
     public void setTitle(@NonNull String title) {
         this.title = title;
@@ -99,11 +108,13 @@ public class ETodo {
 
     /**
      * get data
+     *
      * @return description
      */
     public String getDescription() {
         return description;
     }
+
     //set description
     public void setDescription(String description) {
         this.description = description;
@@ -111,11 +122,13 @@ public class ETodo {
 
     /**
      * get Date
+     *
      * @return todoDate
      */
     public Date getTodoDate() {
         return todoDate;
     }
+
     //set Date
     public void setTodoDate(Date todoDate) {
         this.todoDate = todoDate;
@@ -123,15 +136,18 @@ public class ETodo {
 
     /**
      * get int priority
+     *
      * @return priority
      */
     public int getPriority() {
         return priority;
     }
+
     //set the value of priority
     public void setPriority(int priority) {
         this.priority = priority;
     }
+
     //boolean iscompleted
     public boolean isCompleted() {
         return isCompleted;
@@ -139,6 +155,7 @@ public class ETodo {
 
     /**
      * set the boolean value
+     *
      * @param completed
      */
     public void setCompleted(boolean completed) {

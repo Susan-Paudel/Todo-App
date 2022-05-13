@@ -1,5 +1,6 @@
 package com.example.todoapp;
 //import required Library
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -8,9 +9,11 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
 /**
  * Dao is the data access object
  * creating thr interface UserDao because the query is execute separately
+ *
  * @Dao annotation identifies it as a DAO class for Room
  */
 @Dao
@@ -18,6 +21,7 @@ public interface UserDao {
     /**
      * allowing the insert of the same word multiple times by passing a conflict resolution strategy
      * insert the data in EUser class
+     *
      * @param todo
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -40,12 +44,11 @@ public interface UserDao {
     /**
      * allowing the update of the same word multiple times by passing a conflict resolution strategy
      * update the user password
+     *
      * @param user
      */
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void update(EUser... user);
-
-
 
 
 }
