@@ -37,13 +37,16 @@ Validation is done for login. After login successful<br />
 ![login](RecordAndScreenshot/login.gif)
 
 # Add
+Adding the items in the list<br/>
+![Add](RecordAndScreenshot/Add.gif)
 
 
 # Update
-
+double tab the given items for update<br/>
+![update](RecordAndScreenshot/update.gif)
 
 # Delete
-You can delete task by swiping the task.<br />
+You can delete task by swiping left and right the task.<br />
 
 
 # List
