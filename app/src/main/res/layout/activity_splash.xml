@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--ConstraintLayout-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,28 +6,31 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".SplashActivity">
+    <!--LinearLayout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <!--ImageView to display logo-->
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="160dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo" />
-
+        <!--TextView to display welcome message-->
         <TextView
             android:id="@+id/textView"
             android:layout_width="265dp"
             android:layout_height="75dp"
+            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/welcome_message"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
+        <!--LinearLayout close-->
     </LinearLayout>
 
-
+    <!--ConstraintLayout close-->
 </androidx.constraintlayout.widget.ConstraintLayout>

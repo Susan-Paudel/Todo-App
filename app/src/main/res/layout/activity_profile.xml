@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--FrameLayout-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,110 +6,117 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".ProfileActivity">
-
+    <!--constraint layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!--scrollview-->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="204dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_account"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                />
-            <TextView
-                android:id="@+id/profile_activity_tv_name"
-                android:layout_width="131dp"
-                android:layout_height="21dp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textAlignment="center"/>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview"
-                android:layout_width="343dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="10dp"
-                app:cardCornerRadius="10dp"
-                android:layout_marginTop="20dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <!--Linear Layout set to vertical orientation-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--ImageView to display profile image-->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="204dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/ic_account" />
+                <!--TextView to display user name-->
+                <TextView
+                    android:id="@+id/profile_activity_tv_name"
+                    android:layout_width="131dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <!--cardView to display editText-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview"
+                    android:layout_width="343dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-                    <TextView
-                        android:id="@+id/textView9"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp">
+                    <!--LinearLayout set to vertical orientation-->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Edit Password"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_margin="10dp"/>
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <!--textview to show Edit password-->
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:text="Edit Password"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <!--Edit text to input old password-->
+                        <EditText
+                            android:id="@+id/profile_activity_tv_oldpass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/gray"
+                            android:ems="10"
+                            android:hint="Old Password"
+                            android:inputType="textPersonName"
+                            android:padding="15dp" />
+                        <!--EditText to input new password-->
+                        <EditText
+                            android:id="@+id/profile_activity_tv_newpass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/gray"
+                            android:ems="10"
+                            android:hint="New password"
+                            android:inputType="textPersonName"
+                            android:padding="15dp" />
+                        <!--Button to update password-->
+                        <Button
+                            android:id="@+id/profile_activity_btn_submit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@color/black"
+                            android:text="@string/submit"
+                            android:textColor="@color/white" />
+                        <!--linearlayout end-->
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/profile_activity_tv_oldpass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:ems="10"
-                        android:hint="Old Password"
-                        android:inputType="textPersonName"
-                        android:padding="15dp"
-                        android:layout_marginTop="10dp"/>
 
-                    <EditText
-                        android:id="@+id/profile_activity_tv_newpass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray"
-                        android:ems="10"
-                        android:hint="New password"
-                        android:inputType="textPersonName"
-                        android:padding="15dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <Button
-                        android:id="@+id/profile_activity_btn_submit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:text="@string/submit"
-                        android:background="@color/black"
-                        android:textColor="@color/white"
-                        android:layout_marginTop="10dp"/>
-
-                </LinearLayout>
-
-
-
-
-            </androidx.cardview.widget.CardView>
-            <Button
-                android:id="@+id/profile_activity_btn_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/color_high"
-                android:padding="8dp"
-                android:text="@string/delete"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                />
-        </LinearLayout>
+                    <!--cardView end-->
+                </androidx.cardview.widget.CardView>
+                <!--Button for delete your account-->
+                <Button
+                    android:id="@+id/profile_activity_btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/color_high"
+                    android:padding="8dp"
+                    android:text="@string/delete"
+                    android:textColor="@color/black" />
+                <!--linearlayout close-->
+            </LinearLayout>
+            <!--scrollview close-->
         </ScrollView>
+        <!--constraintLayout close-->
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <!--FrameLayout end-->
 </FrameLayout>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--constraint layout start-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,34 +6,38 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".LoginActivity">
+    <!--linear layout with vertical orientation-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <!--Image view for profile-->
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo" />
+        <!--end ImageView-->
+        <!--CardView to display the form for password reset-->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="10dp">
-
+            <!--Linear layout to display the EditText view-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="12dp">
-
+                <!--Linear layout with vertical orientation-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
+                    <!--Textview to display the login-->
                     <TextView
                         android:id="@+id/signup_activity_tv_title"
                         android:layout_width="match_parent"
@@ -44,7 +48,7 @@
                         android:textColor="@color/black"
                         android:textSize="34sp"
                         android:textStyle="bold" />
-
+                    <!--TextView to show the name -->
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
@@ -54,7 +58,7 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
-
+                    <!--EditText view to enter the username-->
                     <EditText
                         android:id="@+id/login_activity_et_name"
                         android:layout_width="match_parent"
@@ -62,21 +66,21 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="10dp"
                         android:background="@color/gray"
-                        android:hint="Enter Your Name"
                         android:ems="10"
+                        android:hint="Enter Your Name"
                         android:inputType="textPersonName"
                         android:padding="15dp" />
-
+                    <!--TextView for password-->
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
                         android:text="@string/password"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="3dp"/>
-
+                        android:textStyle="bold" />
+                    <!--EditText for password input-->
                     <EditText
                         android:id="@+id/login_activity_et_password"
                         android:layout_width="match_parent"
@@ -89,7 +93,8 @@
                         android:padding="15dp" />
 
                 </LinearLayout>
-
+                <!--linear layout close-->
+                <!--button for login-->
                 <Button
                     android:id="@+id/login_activity_btn_login"
                     android:layout_width="match_parent"
@@ -101,42 +106,39 @@
                     android:text="@string/login"
                     android:textColor="@color/white" />
             </LinearLayout>
+            <!--linearLayout end-->
+            <!--Linear layout start-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="320dp"
-                android:layout_marginBottom="20dp">
-
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+                <!--textView for making new account-->
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:gravity="center"
                     android:text="@string/don_t_have_an_account"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
-
+                    android:textStyle="bold" />
+                <!--Button for redirecting to register page-->
                 <Button
                     android:id="@+id/login_activity_btn_signup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/black"
-                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:text="@string/signup" />
+                    android:background="@color/black"
+                    android:text="@string/signup"
+                    android:textColor="@color/white" />
             </LinearLayout>
-
+            <!--linear layout close-->
         </androidx.cardview.widget.CardView>
-
+        <!--cardView end-->
     </LinearLayout>
-
-
-
-
-
-
-
+    <!--linear layout close-->
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Constraintlayout end-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--Relative layout-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,39 +6,39 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".EditTodoFragment">
-
+    <!--CardView to display content-->
     <androidx.cardview.widget.CardView
         android:layout_width="343dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="32dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp">
-
+        <!--ScrollView-->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp">
-
+            <!--LinearLayout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+                <!--EditText View for title-->
                 <EditText
                     android:id="@+id/edit_fragment_txt_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
                     android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@color/gray"
                     android:ems="10"
                     android:hint="@string/edit_title"
                     android:inputType="textPersonName"
                     android:padding="15dp" />
-
+                <!--EditText View for description-->
                 <EditText
                     android:id="@+id/edit_fragment_txt_description"
                     android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                     android:maxLines="5"
                     android:padding="15dp"
                     android:scrollbars="vertical" />
-
+                <!--EditText View for date-->
                 <EditText
                     android:id="@+id/edit_fragment_txt_date"
                     android:layout_width="match_parent"
@@ -64,14 +64,14 @@
                     android:hint="@string/edit_date"
                     android:inputType="textPersonName"
                     android:padding="15dp" />
-
+                <!--RadioGroup-->
                 <RadioGroup
                     android:id="@+id/edit_fragment_rg_priority"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
                     android:orientation="horizontal">
-
+                    <!--RadioButton for low-->
                     <RadioButton
                         android:id="@+id/edit_fragment_rb_low"
                         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
                         android:background="@color/color_low"
                         android:text="@string/edit_low"
                         android:textStyle="bold" />
-
+                    <!--RadioButton for medium-->
                     <RadioButton
                         android:id="@+id/edit_fragment_rb_medium"
                         android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                         android:background="@color/color_medium"
                         android:text="@string/edit_medium"
                         android:textStyle="bold" />
-
+                    <!--RadioButton for high-->
                     <RadioButton
                         android:id="@+id/edit_fragment_rb_high"
                         android:layout_width="wrap_content"
@@ -100,10 +100,9 @@
                         android:textStyle="bold" />
 
 
-
-
+                    <!--RadioGroup close-->
                 </RadioGroup>
-
+                <!--CheckBox-->
                 <CheckBox
                     android:id="@+id/edit_fragment_chk_complete"
                     android:layout_width="match_parent"
@@ -111,34 +110,38 @@
                     android:layout_marginBottom="15dp"
                     android:text="CheckBox"
                     android:textStyle="bold" />
-
+                <!--LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-
+                    <!--Button for save-->
                     <Button
                         android:id="@+id/edit_fragment_btn_save"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:background="@color/black"
-                        android:textColor="@color/white"
                         android:layout_weight="1"
-                        android:text="@string/edit_save" />
-
+                        android:background="@color/black"
+                        android:text="@string/edit_save"
+                        android:textColor="@color/white" />
+                    <!--cancel Button-->
                     <Button
                         android:id="@+id/edit_fragment_btn_cancel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:background="@color/black"
-                        android:textColor="@color/white"
                         android:layout_weight="1"
-                        android:text="@string/cancel" />
+                        android:background="@color/black"
+                        android:text="@string/cancel"
+                        android:textColor="@color/white" />
+                    <!--LinearLayout close-->
                 </LinearLayout>
+                <!--LinearLayout close-->
             </LinearLayout>
+            <!--ScrollView close-->
         </ScrollView>
+        <!--CardView close-->
     </androidx.cardview.widget.CardView>
-
+    <!--RelativeLayout close-->
 </RelativeLayout>

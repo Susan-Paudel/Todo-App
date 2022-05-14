@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--menu dropdown items-->
 <menu  xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--item for delete completed-->
     <item
         android:id="@+id/mnu_delete_completed"
         android:title="Delete Completed"
         app:showAsAction="collapseActionView" />
+    <!--item for Delete All-->
     <item
         android:id="@+id/mnu_delete_all"
         android:title="Delete All"
         />
+    <!--item for logout-->
     <item
         android:id="@+id/mnu_logout"
         android:title="Log Out" />
 </menu>
+<!--menu end-->

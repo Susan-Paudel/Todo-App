@@ -1,4 +1,5 @@
 <resources>
+    <!--String used by the application-->
     <string name="app_name">TodoApp</string>
     <string name="edit_low">Low</string>
     <string name="edit_save">Save</string>
