@@ -3,7 +3,7 @@
 <h1>Features of TodoApp</h1>
 <ul>
 	<li>Add your own todo with title, description, complete status and date.</li>
-	<li>Edit the todo that were added by double tab the given each lists</li>
+	<li>Edit the todo that were added by double tab the given each lists.</li>
 	<li>Display the todo specific to the user in the home page.</li>
 	<li>Delete individual todo by swiping.</li>
 	<li>Delete all the todos that are completed.</li>
@@ -15,15 +15,21 @@
 <ul>
     <li>Form validation.</li>
 	<li>Change completion status of todo from home page.</li>
-	<li>Multiple account signup and login</li>
+	<li>Multiple account signup and login.</li>
 	<li>View your account profile and change password.</li>
 	<li>Delete your account.</li>
 </ul>
 
+### Starting of the application
+![starting](RecordAndScreenshot/start.gif)
+**The above gif file show the starting phase of the application by clicking the todo icon from the mobile.
+After it will take to the welcome page and to the login page after three second in Splash page**
+---
+
 ### Registration
 **We need to register in order to login.**<br/>
 ![signup](RecordAndScreenshot/signup.gif)<br/>
-*Register detail name must be different validation and empty validation*<br/>
+**Register detail name must be different validation and empty validation**<br/>
 ![signupValidation](RecordAndScreenshot/validationSignup.gif)<br/>
 **The above two Records illustrate the registration form with validation like an empty field, the user already exists and the password does not match. After
 registration completed it will show the toast message saying register successful**
