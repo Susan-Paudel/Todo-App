@@ -22,21 +22,23 @@
 
 ### Starting of the application
 
+![starting](RecordAndScreenshot/start.gif)
 
-![starting](RecordAndScreenshot/start.gif)<br/>
 **The above gif file show the starting phase of the application by clicking the todo icon from the mobile.
-After it will take to the welcome page and to the login page after three second in Splash page**
+After it will take to the welcome page and to the login page after three second in Splash page.**
 ---
 
 ### Registration
 
 
-**We need to register in order to login.**<br/>
-![signup](RecordAndScreenshot/signup.gif)<br/>
-**Register detail name must be different validation and empty validation**<br/>
-![signupValidation](RecordAndScreenshot/validationSignup.gif)<br/>
+**We need to register in order to login.**
+![signup](RecordAndScreenshot/signup.gif)
+
+**Register detail name must be different validation and empty validation.**
+![signupValidation](RecordAndScreenshot/validationSignup.gif)
+
 **The above two Records illustrate the registration form with validation like an empty field, the user already exists and the password does not match. After
-registration completed it will show the toast message saying register successful**
+registration completed it will show the toast message saying register successful.**
 ---
 
 ### Login
@@ -46,7 +48,7 @@ registration completed it will show the toast message saying register successful
 ![login](RecordAndScreenshot/login.gif)<br/>
 **The record is all about the login system in the application with validation like the user does not exist, empty fields and username, as well as the password, does not match.
 After the login is successful it will redirect to the todo list page through which we can view the profile,deleted completed tasks only,
-delete all,log out our account and can do crud operation of the tasks**
+delete all,log out our account and can do crud operation of the tasks.**
 ---
 ### Add
 
@@ -84,7 +86,7 @@ personal account and update password.**
 ### List
 
 
-view the list of data<br/>
+**view the list of data.**<br/>
 ![listofdata](RecordAndScreenshot/listofdata.gif)<br/>
 **This page shows the all the todo task.**
 ---
@@ -111,5 +113,5 @@ view the list of data<br/>
 
 **Run whole application in landscape.**<br/>
 !['landscape](RecordAndScreenshot/landscape.gif)<br/>
-**The above record shows the whole application page with landscape**
+**The above record shows the whole application page with landscape.**
 ---
