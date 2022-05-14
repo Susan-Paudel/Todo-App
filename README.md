@@ -20,67 +20,66 @@
 	<li>Delete your account.</li>
 </ul>
 
-# Todo-App
-
-# Registration
+## Registration
 **We need to register in order to login.**<br/>
-![signup](RecordAndScreenshot/signup.gif)
+![signup](RecordAndScreenshot/signup.gif)<br/>
 **Register detail name must be different validation and empty validation**<br/>
-![signupValidation](RecordAndScreenshot/validationSignup.gif)
+![signupValidation](RecordAndScreenshot/validationSignup.gif)<br/>
 **The above two Record illustrate the registration form with validation like empty field, user already exist and password does not match. After 
 registration completed it will show the toast message saying register successful**
+---
 
-
-# Login
+## Login
 **Validation is done for login. After login successful.**<br/>
-![login](RecordAndScreenshot/login.gif)
+![login](RecordAndScreenshot/login.gif)<br/>
 **The record is all about the login system in the application with validation like user does not exists, empty fields and username as well as password does not match.
 After the login is successful it will redirect to todo list page through which we can view profile,deleted completed task only,
 delete all ,logout our account and can do crud operation of the tasks**
-
-# Add
+---
+## Add
 **Adding the items in the list.**<br/>
-![Add](RecordAndScreenshot/Add.gif)
+![Add](RecordAndScreenshot/Add.gif)<br/>
 **The Record shows the adding the task in the todo lists. To add the list of data by clicking floatingactionbutton which lie bottom left corner,then it will redirect to insert form
 through which data are inserted after clicking save and form consist of some validation .lastly it will redirect to todo list page by showing the task according to
 prefer color chosen for each task.**
-
-# Update
+---
+## Update
 **double tab the given items for update.**<br/>
-![update](RecordAndScreenshot/update.gif)
+![update](RecordAndScreenshot/update.gif)<br/>
 **This Record is all about the update event for the task. double tab event is used to update the task.After this event is done
 it will redirect to update form with related information in it. when the update button is clicked then it will redirect back to 
 todo lists page and cancel button is clicked then update will not happen to that task.**
-
-# Delete
+---
+## Delete
 **You can delete task by swiping left and right the task.**<br/>
-![Delete](RecordAndScreenshot/Delete.gif)
+![Delete](RecordAndScreenshot/Delete.gif)<br/>
 **To delete the task the swapping the task left or right it will automatically delete the task amd it will show toast message one task deleted.**
-
-#user profile
+---
+## user profile
 **user profile we can delete the user and update password.**<br/>
-![profile](RecordAndScreenshot/userprofile.gif)
+![profile](RecordAndScreenshot/userprofile.gif)<br/>
 **By clicking the profile name or icon from the toolbar, it will redirect us to user profile page from where we can delete our
 personal account and update password.**
-
-# List
+---
+## List
 view the list of data<br/>
-![listofdata](RecordAndScreenshot/listofdata.gif)
+![listofdata](RecordAndScreenshot/listofdata.gif)<br/>
 **This page shows the all the todo task **
-
-#Delete task selected Completed tasks only
+---
+## Delete task selected Completed tasks only
 **Open the menu options and select delete completed to delete completed tasks only.**<br/>
 ![deleteCompletedTask](RecordAndScreenshot/deleteCompleted.gif)
-
-# Delete All
+---
+## Delete All
 **Open the menu options and select delete all to delete every tasks.**<br/>
 ![deleteAll](RecordAndScreenshot/deleteAll.gif)
-
-# Logout
+---
+## Logout
 **To logout from the app, you can click the power off button on the menu bar.**<br/>
 ![logout](RecordAndScreenshot/logout.gif)
-
-# Landscape 
+---
+## Landscape 
 **Run whole application in landscape.**<br/>
-!['landscape](RecordAndScreenshot/landscape.gif)
-
+!['landscape](RecordAndScreenshot/landscape.gif)<br/>
+**The above record shows the whole application page with landscape**
+---
