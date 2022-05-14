@@ -23,7 +23,7 @@
 ### Registration
 **We need to register in order to login.**<br/>
 ![signup](RecordAndScreenshot/signup.gif)<br/>
-**Register detail name must be different validation and empty validation**<br/>
+*Register detail name must be different validation and empty validation*<br/>
 ![signupValidation](RecordAndScreenshot/validationSignup.gif)<br/>
 **The above two Records illustrate the registration form with validation like an empty field, the user already exists and the password does not match. After
 registration completed it will show the toast message saying register successful**
